@@ -11,6 +11,9 @@
     "wdio-json-html-reporter": "^1.5.9"
   },
   "scripts": {
-    "wdio": "wdio run ./wdio.conf.ts"
+    "test:all": "wdio run ./wdio.conf.ts",
+    "test:login": "wdio run ./wdio.conf.ts --spec ./test/specs/Login/login.e2e.ts",
+    "test:product": "wdio run ./wdio.conf.ts --spec ./test/specs/Product/product.e2e.ts",
+    "test:users": "wdio run ./wdio.conf.ts --spec ./test/specs/Users/users.e2e.ts"
   }
 }
