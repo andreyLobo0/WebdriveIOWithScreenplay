@@ -1,3 +1,15 @@
+const environments: { [key: string]: string } = {
+  dev: 'https://front.serverest.dev',
+  staging: 'https://front.serverest.staging',
+  qa: 'https://front.serverest.qa',
+  // Adiciona outros ambientes conforme necessário
+};
+const targetEnv = process.env.ENV || 'qa';
+const baseURL = environments[targetEnv];
+
+if (!baseURL) {
+  throw new Error(`Ambiente "${targetEnv}" não definido.`);
+}   
 export const config: WebdriverIO.Config = {
     //
     // ====================
@@ -86,7 +98,7 @@ export const config: WebdriverIO.Config = {
     // with `/`, the base url gets prepended, not including the path portion of your baseUrl.
     // If your `url` parameter starts without a scheme or `/` (like `some/path`), the base url
     // gets prepended directly.
-    baseUrl: 'https://front.serverest.dev',
+    baseUrl: baseURL,
     //
     // Default timeout for all waitFor* commands.
     waitforTimeout: 10000,
