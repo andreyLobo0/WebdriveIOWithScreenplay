@@ -50,4 +50,4 @@ jobs:
           if: always()
           with:
             name: reports - ${{ github.event.inputs.testSuite }} - ${{ github.event.inputs.environment }}
-            path: test/reposts/generateReport/
+            path: test/reports/generateReport/
