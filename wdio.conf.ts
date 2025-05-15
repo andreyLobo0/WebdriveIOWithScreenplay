@@ -131,7 +131,6 @@ export const config: WebdriverIO.Config = {
     // Make sure you have the wdio adapter package for the specific framework installed
     // before running any tests.
     framework: 'mocha',
-    
     //
     // The number of times to retry the entire specfile when it fails as a whole
     // specFileRetries: 1,
@@ -145,8 +144,13 @@ export const config: WebdriverIO.Config = {
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter
-    reporters: ['spec'],
-
+    reporters:  [
+        ['allure', {
+        outputDir: './test/reports/allure-results',
+        disableWebdriverStepsReporting: true,
+        disableWebdriverScreenshotsReporting: true,
+        }]
+    ],
     // Options to be passed to Mocha.
     // See the full list at http://mochajs.org/
     mochaOpts: {

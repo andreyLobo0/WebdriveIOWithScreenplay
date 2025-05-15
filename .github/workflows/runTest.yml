@@ -39,9 +39,12 @@ jobs:
           env:
             ENV: ${{ github.event.inputs.environment }}
 
+        - name: Generate Allure Report
+          run: npm run allure:report
+          
         - name: Upload reports
           uses: actions/upload-artifact@v4
           if: failure()
           with:
             name: reports - ${{ github.event.inputs.testSuite }} - ${{ github.event.inputs.environment }}
-            path: test/reports
+            path: allure-report
