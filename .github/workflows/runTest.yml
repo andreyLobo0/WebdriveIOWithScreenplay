@@ -47,7 +47,7 @@ jobs:
           
         - name: Upload reports
           uses: actions/upload-artifact@v4
-          if: failure()
+          if: always()
           with:
             name: reports - ${{ github.event.inputs.testSuite }} - ${{ github.event.inputs.environment }}
             path: test/reposts/generateReport
