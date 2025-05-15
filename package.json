@@ -15,5 +15,8 @@
     "test:login": "wdio run ./wdio.conf.ts --spec ./test/specs/Login/login.e2e.ts",
     "test:product": "wdio run ./wdio.conf.ts --spec ./test/specs/Product/product.e2e.ts",
     "test:users": "wdio run ./wdio.conf.ts --spec ./test/specs/Users/users.e2e.ts"
+  },
+  "dependencies": {
+    "geckodriver": "^5.0.0"
   }
 }
