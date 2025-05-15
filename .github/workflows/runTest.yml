@@ -47,4 +47,4 @@ jobs:
           if: failure()
           with:
             name: reports - ${{ github.event.inputs.testSuite }} - ${{ github.event.inputs.environment }}
-            path: allure-report
+            path: test/reposts/generateReport
